@@ -10,7 +10,7 @@ import { ProductService } from '../product.service';
 })
 export class ProductCreateComponent implements OnInit {
 
-  product: Product = {
+  product: Omit<Product, 'id'> = {
     name: '',
     price: 0.0
   }
@@ -18,10 +18,10 @@ export class ProductCreateComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private router: Router,
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    
+
   }
 
   createProduct(): void {
