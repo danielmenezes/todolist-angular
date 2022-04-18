@@ -12,7 +12,7 @@ export class ProductCreateComponent implements OnInit {
 
   product: Omit<Product, 'id'> = {
     name: '',
-    price: 0.0
+    price: null
   }
 
   constructor(
@@ -26,7 +26,7 @@ export class ProductCreateComponent implements OnInit {
 
   createProduct(): void {
     this.productService.create(this.product).subscribe(() => {
-      this.productService.showMessage('Operação executada com sucesso!')
+      this.productService.showMessage('Produto cadastrado com sucesso!')
       this.router.navigate(['/products'])
     })
   }
